@@ -1,7 +1,8 @@
 {
   "/api/*": {
-    "target": "https://budgeteer-sever.herokuapp.com" ,
-    "secure": false,
-    "pathRewrite": {"^/api" : "/api"}
+  "target": "https://budgeteer-sever.herokuapp.com/",
+  "secure": false,
+  "changeOrigin": true,
+  "logLevel": "debug"
   }
 }
