@@ -1,0 +1,21 @@
+.footer{
+    width: 100%;
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    background: rgb(13, 114, 145);
+    align-items: center;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.footer_dark{
+    background: rgb(14, 1, 75);
+
+}
+
+p{
+    text-align: center;
+    color: white;
+    padding: 1%;
+}

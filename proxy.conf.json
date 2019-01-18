@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "https://budgeteer-sever.herokuapp.com" ,
+    "secure": false,
+    "pathRewrite": {"^/api" : "/api"}
+  }
+}

@@ -1,0 +1,9 @@
+<div class="wrapper">
+
+  <app-header></app-header>
+  <div [ngClass]="{'content_dark': darkModeActive}" class="content" >
+      <app-alert  ></app-alert>
+    <router-outlet [hidden]="isLoading"></router-outlet>
+  </div>
+<app-footer ></app-footer>
+</div>

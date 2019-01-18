@@ -1,0 +1,41 @@
+<aside class="side-menu__container"  [ngClass]="{'side-menu__container-active': showMenu}" (click)="toggleMenu()">
+  <nav class="slide-menu" [ngClass]="{'slide-menu-active': showMenu}" (click)="$event.stopImmediatePropagation();">
+    <section [ngClass]="{'menu_header-dark': darkModeActive}" class="menu-header">
+      <div class="profile-image__container">
+        <img src="" alt="profile-image" class="profile__image">
+      </div>
+      <div *ngIf="isUserLoggedIn" class="account-details">
+        <span class="name__text">{{user.name}}</span>
+        <span class="email__text">{{user.username}}</span>
+      </div>
+    </section>
+
+    <section class="menu-body">
+      <span class="nav_text" *ngIf="isUserLoggedIn" routerLink="/account" (click)="toggleMenu()">My Account</span>
+      <span class="nav_text" *ngIf="isUserLoggedIn" [routerLink]="[ '/create']" (click)="toggleMenu()">Host Event</span>
+      <!-- toggle menu -->
+      <div class="mode-toggle__container">
+        <span (click)='toggle.click()' class="mode-toggle__text">{{darkModeActive===false?"Enable Dark Mode":"Disable
+          Dark Mode"}}</span>
+        <input (click)="modeToggleSwitch()" class="toggleCheck" id="toggle" type="checkbox" #toggle>
+        <label class="toggleBtn" for="toggle"></label>
+      </div>
+      <span class="nav_text" *ngIf="isUserLoggedIn" (click)="logoutUser()">Log-out</span>
+    </section>
+
+  </nav>
+</aside>
+
+
+
+
+<header [ngClass]="{'main__header-dark': darkModeActive}" class="main__header">
+  <img *ngIf="isUserLoggedIn" src="" (click)="toggleMenu()">
+  <span><a (click)="getAllData()">Home</a></span>
+
+ <!-- <span><a *ngIf="isUserLoggedIn" [routerLink]="['/create']">Host Event</a></span>-->
+
+  <span><a *ngIf="isUserLoggedIn" routerLink="/account">{{user.name}}</a></span>
+  <span id="logout"><a *ngIf="isUserLoggedIn" (click)="logoutUser()">Log-out</a></span>
+  <span><a *ngIf="!isUserLoggedIn" routerLink="/login">LogIn</a></span>
+</header>
