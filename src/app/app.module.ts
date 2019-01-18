@@ -16,7 +16,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoaderInterceptorService } from './service/shared/loader-interceptor.service';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthGuardService } from './service/user/auth-guard.service';
 
 @NgModule({
@@ -34,6 +34,7 @@ import { AuthGuardService } from './service/user/auth-guard.service';
   imports: [
     BrowserModule,
     RouterModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
