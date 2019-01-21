@@ -1,7 +1,7 @@
 <div class="content">
   <div  id="toggleButton">
-  <button [disabled]="isSettled"  [ngClass]="{'toggleButton_dark': darkModeActive}" (click)="togglePastButton()" type="button" class="btn">Current Budget</button>
-  <button [disabled]="!isSettled"  [ngClass]="{'toggleButton_dark': darkModeActive}" (click)="togglePastButton()" type="button" class="btn">Past Budget</button>
+  <button [disabled]="isSettled"  (click)="togglePastButton()" type="button" class="btn">Current Budget</button>
+  <button [disabled]="!isSettled" (click)="togglePastButton()" type="button" class="btn">Past Budget</button>
 </div>
 <div *ngIf="budgets">
   <ng-container *ngIf="budgets.length===0; else elseTemplate">
@@ -10,12 +10,12 @@
 
   <div class="content" *ngIf="isSettled else pastTemplate">
     <dl id="budget">
-      <dt [ngClass]="{'tiles_dark': darkModeActive}" *ngFor="let budget of budgets">
+      <dt *ngFor="let budget of budgets">
         <a routerLink="/budget/{{budget._id}}">
-            <p [ngClass]="{'text_dark': darkModeActive}" >{{budget.name}} </p>
-            <p [ngClass]="{'text_dark': darkModeActive}" >Cost :{{budget.cost}} </p>
-            <p [ngClass]="{'text_dark': darkModeActive}" >Date :{{budget.createdDate|date}} </p>
-            <p [ngClass]="{'text_dark': darkModeActive}" >Buyer :{{budget.buyer}} </p>
+            <p>{{budget.name}} </p>
+            <p>Cost :{{budget.cost}} </p>
+            <p>Date :{{budget.createdDate|date}} </p>
+            <p>Buyer :{{budget.buyer}} </p>
         </a>
       </dt>
     </dl>
@@ -23,12 +23,12 @@
 
   <ng-template class="content" #pastTemplate>
     <dl id="budget">
-      <dt [ngClass]="{'tiles_dark': darkModeActive}" *ngFor="let budget of budgets">
+      <dt *ngFor="let budget of budgets">
         <a>
-            <p [ngClass]="{'text_dark': darkModeActive}" >{{budget.name}} </p>
-            <p [ngClass]="{'text_dark': darkModeActive}" >Cost :{{budget.cost}} </p>
-            <p [ngClass]="{'text_dark': darkModeActive}" >Date :{{budget.createdDate|date}} </p>
-            <p   [ngClass]="{'text_dark': darkModeActive}" >Buyer :{{budget.buyer}} </p>
+            <p>{{budget.name}} </p>
+            <p>Cost :{{budget.cost}} </p>
+            <p>Date :{{budget.createdDate|date}} </p>
+            <p>Buyer :{{budget.buyer}} </p>
         </a>
       </dt>
     </dl>

@@ -14,13 +14,15 @@ export class AppComponent implements OnInit {
   constructor(private loaderService: LoaderService, private ui: UiService) { }
 
   ngOnInit() {
+  console.log('Welcome');
+
     this.loaderService.loaderState.subscribe(currentState => {
       this.isLoading = currentState.show;
     });
     this.ui.darkModeState.subscribe((value) => {
       this.darkModeActive = value;
     });
-
   }
+
 
 }
