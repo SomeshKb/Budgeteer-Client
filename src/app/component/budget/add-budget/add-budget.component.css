@@ -1,0 +1,216 @@
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 50%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    align-content: center;
+    margin-top: 20px;
+  
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+  
+  .form input[type=text] {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .form input[type=number] {
+    align-self: auto;
+    box-align: center;
+    width: 20%;
+    margin-left: 40%;
+  }
+  
+  .form input[type=date] {
+    align-self: auto;
+    box-align: center;
+    width: 40%;
+    margin: 0% 0% 0% 30%;
+  }
+  
+  .form input[type=radio] {
+    width: 10%;
+    align-content: left;
+  }
+  
+  .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #e564ff;
+    width: 40%;
+    margin: 5px;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  
+  .submit {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #e564ff;
+    width: 50%;
+    margin: 5px;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  
+  .form button:hover {
+    background: rgb(240, 240, 240);
+    color: #e564ff;
+  }
+  
+  #submit:hover {
+    background: rgb(240, 240, 240);
+    color: #e564ff;
+  }
+  
+  #displayImage {
+    align-self: left;
+    padding: 10px 0px;
+    width: 30%;
+    margin-left: 35%;
+    height: 200px;
+    display: block;
+  }
+  
+  #bannerImage {
+    display: block;
+    margin-left: 17.5%;
+    width: 65%;
+    height: 250px;
+  }
+  
+  .cost {
+    width: 40%;
+    display: flex;
+    margin: 0% 30% 0% 30%;
+    flex-flow: row;
+    flex-wrap: wrap;
+  
+  }
+  
+  .cost label {
+    width: 30%;
+    text-align: center;
+    padding: 1%;
+    margin: 0%;
+  }
+  
+  #cost {
+    width: 70%;
+    margin: 0%;
+  }
+  
+  .type {
+    width: 40%;
+    display: flex;
+    margin: 0% 30% 5% 30%;
+    flex-flow: row;
+  
+  }
+  
+  .type label {
+    width: 30%;
+    text-align: center;
+    padding: 1%;
+    margin: 0%;
+  }
+  
+  .type select {
+    width: 70%;
+    margin: 0%;
+  }
+  
+  
+  .seats {
+    width: 40%;
+    display: flex;
+    margin: 5% 30% 5% 30%;
+    flex-flow: row;
+    flex-wrap: wrap;
+  }
+  
+  .seats label {
+    width: 30%;
+    text-align: center;
+    padding: 1%;
+    margin: 0%;
+  }
+  
+  .seats #seats {
+    width: 70%;
+    margin: 0%;
+  }
+  
+  
+  .tiles_dark{
+    background: rgb(42, 9, 70);
+    color: white;
+  }
+  
+  .text_dark{
+    color: whitesmoke;
+  }
+  
+  .form .button_dark{
+    background: rgb(28, 3, 39);
+  }
+  
+  
+  
+  
+  @media only screen and (max-width: 750px) {
+    .form {
+      position: relative;
+      z-index: 1;
+      background: #FFFFFF;
+      max-width: 90%;
+      margin: 0 auto 10px;
+      text-align: center;
+      align-content: center;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+  
+    .form input[type=date] {
+      align-self: auto;
+      box-align: center;
+      width: 60%;
+      margin: 0% 0% 0% 20%;
+    }
+  
+    .form button {
+      align-self: auto;
+      box-align: center;
+      width: 80%;
+      margin: 0% 0% 2% 10%;
+    }
+  
+    .seats,
+    .cost,
+    .type {
+      width:70%;
+      margin: 5% 0% 2% 15%;
+    }
+  }
+  

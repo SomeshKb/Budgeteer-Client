@@ -41,8 +41,8 @@ export class HeaderComponent implements OnInit {
   }
 
   getAllData() {
-    // this.eventService.getEvents().subscribe(events => {
-    //   this.eventService.currentEvent.next(events);
+    // this.eventService.getEvents().subscribe(budget => {
+    //   this.eventService.currentEvent.next(budget);
     // });
     if (this.route.snapshot.fragment !== '/home') {
       this.router.navigate(['/home']);

@@ -4,9 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/user/login/login.component';
 import { RegisterComponent } from './component/user/register/register.component';
-import { ItemsViewComponent } from './component/item/items-view/items-view.component';
-import { ItemDetailComponent } from './component/item/item-detail/item-detail.component';
-import { AddItemComponent } from './component/item/add-item/add-item.component';
+import { BudgetsViewComponent } from './component/budget/budgets-view/budgets-view.component';
+import { BudgetDetailComponent } from './component/budget/budget-detail/budget-detail.component';
 import { HeaderComponent } from './component/shared/header/header.component';
 import { FooterComponent } from './component/shared/footer/footer.component';
 import { AlertComponent } from './component/shared/alert/alert.component';
@@ -18,17 +17,20 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthGuardService } from './service/user/auth-guard.service';
+import { AddBudgetComponent } from './component/budget/add-budget/add-budget.component';
+import { LoaderComponent } from './component/shared/loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ItemsViewComponent,
-    ItemDetailComponent,
-    AddItemComponent,
+    BudgetsViewComponent,
+    BudgetDetailComponent,
+    AddBudgetComponent,
     HeaderComponent,
     FooterComponent,
+    LoaderComponent,
     AlertComponent
   ],
   imports: [

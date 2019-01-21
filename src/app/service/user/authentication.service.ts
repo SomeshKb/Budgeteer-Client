@@ -4,12 +4,14 @@ import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { UserDetails, TokenResponse, TokenPayload } from '../../models/user';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class AuthenticationService {
   private token: string;
 
-  public  isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private userUrl = environment.baseUrl + '/users';
 
 
   constructor(private http: HttpClient, private router: Router) {
@@ -22,7 +24,7 @@ export class AuthenticationService {
     this.token = token;
   }
 
-  private getToken(): string {
+  getToken(): string {
     if (!this.token) {
       this.token = localStorage.getItem('token');
     }
@@ -43,9 +45,8 @@ export class AuthenticationService {
 
   public isLoggedIn(): boolean {
     const user = this.getUserDetails();
-
     if (user) {
-      return user.exp > Date.now() / 1000;
+      return true;
     } else {
       return false;
     }
@@ -55,9 +56,10 @@ export class AuthenticationService {
     let base;
 
     if (method === 'post') {
-      base = this.http.post(`/api/users/${type}`, user);
+      base = this.http.post(`/${type}`, user);
     } else {
-      base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` } });
+      console.log(environment.baseUrl);
+      base = this.http.get(`${this.userUrl}/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` } });
     }
 
     const request = base.pipe(
@@ -82,6 +84,10 @@ export class AuthenticationService {
 
   public profile(): Observable<any> {
     return this.request('get', 'profile');
+  }
+
+  public getUserName(id): Observable<any> {
+    return this.http.get<any>(`api/users/details/${id}`, { headers: { Authorization: `Bearer ${this.getToken()}` } });
   }
 
   public logout(): void {

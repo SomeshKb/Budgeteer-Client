@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
-import { ItemsViewComponent } from './component/item/items-view/items-view.component';
+import { BudgetsViewComponent } from './component/budget/budgets-view/budgets-view.component';
 import { LoginComponent } from './component/user/login/login.component';
 import { RegisterComponent } from './component/user/register/register.component';
-import { ItemDetailComponent } from './component/item/item-detail/item-detail.component';
+import { BudgetDetailComponent } from './component/budget/budget-detail/budget-detail.component';
 import { AuthGuardService } from './service/user/auth-guard.service';
+import { AddBudgetComponent } from './component/budget/add-budget/add-budget.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-{ path: 'home', component: ItemsViewComponent, canActivate: [AuthGuardService] },
+  { path: 'home', component: BudgetsViewComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'item/:id', component: ItemDetailComponent }
+  { path: 'budget/:id', component: BudgetDetailComponent },
+  { path: 'budget/add', component: AddBudgetComponent },
 ];
 
 

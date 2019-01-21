@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.auth.isLoggedIn()) {
-      this.router.navigateByUrl('/events');
+      this.router.navigateByUrl('/home');
     }
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(6)]],
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         console.log('Done');
         this.router.navigateByUrl('/home');
       }, (err) => {
-        if (err.status === 401) {
+        if (err.status === 400) {
           this.alertService.error('Invalid Credentials !!');
         }
       });

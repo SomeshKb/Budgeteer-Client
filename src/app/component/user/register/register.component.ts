@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     if (this.auth.isLoggedIn()) {
-      this.router.navigateByUrl('/events');
+      this.router.navigateByUrl('/home');
     }
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
