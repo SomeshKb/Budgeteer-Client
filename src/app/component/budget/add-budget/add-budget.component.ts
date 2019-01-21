@@ -29,8 +29,6 @@ export class AddBudgetComponent implements OnInit {
     // });
 
     this.createForm = this.formBuilder.group({
-      shortDescription: ['', [Validators.required, Validators.maxLength(30)]],
-      totalSeats: [, [Validators.required, Validators.min(1)]],
       name: ['', [Validators.required]],
       items: [],
       description: null,

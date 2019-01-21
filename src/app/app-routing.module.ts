@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'home', component: BudgetsViewComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'budget/:id', component: BudgetDetailComponent },
   { path: 'budget/add', component: AddBudgetComponent },
+  { path: 'budget/:id', component: BudgetDetailComponent },
 ];
 
 
