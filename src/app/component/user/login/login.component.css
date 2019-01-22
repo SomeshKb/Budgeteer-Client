@@ -108,9 +108,3 @@ a {
   text-decoration: none;
 }
 
-
-@media only screen and (max-width: 750px) {
-  .login-page {
-    margin-top: 20%;
-  }
-}

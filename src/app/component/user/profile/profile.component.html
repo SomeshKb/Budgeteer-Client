@@ -1,0 +1,28 @@
+<form [ngClass]="{'form_dark': darkModeActive}" *ngIf="user" class="userForm">
+    <img id="userImage" src='assets/account.png'><br>
+    <label [ngClass]="{'text_dark': darkModeActive}" >{{userDetails.username}}</label><br>
+    <label [ngClass]="{'text_dark': darkModeActive}" >{{user.firstName}} {{user.lastName}}</label><br>
+    <button class="btn btn-warning" *ngIf="hasOrganised"  [routerLink]="[ '/admin/events']">Admin DashBoard</button>
+  </form>
+  
+  
+  <form [ngClass]="{'form_dark': darkModeActive}" *ngIf="publishedBudget[0]" class="eventForm">
+  
+    <div *ngIf="publishedBudget[0]" class="form-group">
+      <h4 [ngClass]="{'text_dark': darkModeActive}" >Items Bought by you</h4>
+      <dl  [ngClass]="{'tile_dark': darkModeActive}" class="publishedBudget" *ngFor="let item of publishedBudget;let i=index">
+    
+        <div *ngIf="contributors[i][0]" id="publishedBudgetDetails">
+          <dd [ngClass]="{'text_dark': darkModeActive}">{{item.name}}</dd>
+          <dd [ngClass]="{'text_dark': darkModeActive}">{{item.description}}</dd>
+          <dd [ngClass]="{'text_dark': darkModeActive}">{{item.createDate}}</dd>
+          <dd [ngClass]="{'text_dark': darkModeActive}">{{item.cost}}</dd>
+          <dd [ngClass]="{'text_dark': darkModeActive}" *ngFor="let contriUser of item.contributors;let j=index" > <p *ngIf="contributors[i][j]">{{contributors[i][j].firstName}}</p></dd>
+
+        </div>
+  
+      </dl>
+    </div>
+  
+  </form>
+  

@@ -1,19 +1,34 @@
 div {
   position: absolute;
   width: 20%;
-  height: 50px;
+  height: 45px;
   text-align: center;
+  align-items: center;
+  display: block;
+  border-radius: 10px;
   right: 5%;
   font-size: 90%;
   z-index: 500000;
-  top: 10%;
+  color: white;
+  top: 10%; 
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.alert-sucess{
+  background: rgb(17, 230, 17);
+}
+.alert-danger{
+ background: rgb(252, 93, 93);
 }
 
 
-@media only screen and (max-width: 750px) {
+/* @media only screen and (max-width: 750px) {
   div {
     top: 10%;
 
     width: 50%;
   }
-}
+} */

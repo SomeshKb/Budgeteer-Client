@@ -1,9 +1,8 @@
 export interface BudgetDetails {
     _id: string;
     name: string;
-    items: Array<Item>;
     description: string;
-    totalCost: number;
+    cost: number;
     createdDate: Date;
     buyer: string;
     contributors: Array<string>;

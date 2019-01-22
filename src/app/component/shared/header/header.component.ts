@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UiService } from 'src/app/service/shared/ui.service';
 import { AuthenticationService } from 'src/app/service/user/authentication.service';
+import { UserProfile } from '../../../models/user';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { AuthenticationService } from 'src/app/service/user/authentication.servi
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  user: UserDetails;
+  user: UserProfile = null;
   isUserLoggedIn: boolean;
   darkModeActive: Boolean = false;
   showMenu: Boolean = false;
@@ -21,8 +22,12 @@ export class HeaderComponent implements OnInit {
   constructor(private route: ActivatedRoute, private ui: UiService,
     private authenticationService: AuthenticationService, private router: Router) {
     this.authenticationService.isUserLoggedIn.subscribe(value => {
-      this.user = this.authenticationService.getUserDetails();
       this.isUserLoggedIn = value;
+      if (this.isUserLoggedIn) {
+        this.authenticationService.profile().subscribe(response => {
+          this.user = response;
+        });
+      }
     });
   }
 

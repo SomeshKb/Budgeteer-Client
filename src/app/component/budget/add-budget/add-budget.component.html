@@ -7,22 +7,23 @@
       <div *ngIf="validate.name.errors.required">Name is required</div>
     </div>
     <label>Description</label>
-    <input type="text" formControlName="description" class="form-control" >
+    <input type="text" formControlName="description" class="form-control">
   </div>
 
   <div class="form-group">
-  <label>Cost</label>
-    <input type="number" placeholder="cost" formControlName="totalCost" class="form-control">
-    <div *ngIf="submitted && validate.totalCost.errors" class="invalid-feedback">
-      <div *ngIf="validate.totalCost.errors.required">Total Cost is required</div>
+    <label>Cost</label>
+    <input type="number" placeholder="cost" formControlName="cost" class="form-control">
+    <div *ngIf="submitted && validate.cost.errors" class="invalid-feedback">
+      <div *ngIf="validate.cost.errors.required">Total Cost is required</div>
     </div>
   </div>
-<div class="form-group">
-  <label>Contributor</label>
-    <input type="checkbox" formControlName="contributor" class="form-control">
-    <div *ngIf="submitted && validate.totalCost.errors" class="invalid-feedback">
-      <div *ngIf="validate.totalCost.errors.required">Total Cost is required</div>
-    </div>
+
+  <div *ngIf="contributors.length!=0" class="form-group type">
+    <label>Contributors</label>
+    <label *ngFor="let user of contributors; let i=index">
+    <input type="checkbox" class="form-control" formControlName="contributors" [value]="user.id" (change)="onCheckChange($event)">
+    {{user.firstName}}
+    </label>
   </div>
   <input class="submit" type="submit" (click)="onSubmit()">
 </form>

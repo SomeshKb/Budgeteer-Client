@@ -48,27 +48,12 @@
   float: left;
 }
 
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #e564ff;
-  width: 40%;
-  margin: 5px;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
 
 .submit {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #e564ff;
+  background: #3e92ff;
   width: 50%;
   margin: 5px;
   border: 0;
@@ -80,14 +65,9 @@
   cursor: pointer;
 }
 
-.form button:hover {
-  background: rgb(240, 240, 240);
-  color: #e564ff;
-}
-
-#submit:hover {
-  background: rgb(240, 240, 240);
-  color: #e564ff;
+.submit:hover {
+  background: #00367e;
+  color: #ffffff;
 }
 
 

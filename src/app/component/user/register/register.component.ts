@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      username: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
@@ -33,6 +33,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    console.log(this.registerForm);
     if (this.registerForm.invalid) {
       return;
     } else {
@@ -41,6 +42,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register(credentials: any) {
+    console.log(credentials);
     this.auth.register(credentials).subscribe((res) => {
       this.router.navigateByUrl('/home');
     }, (err) => {

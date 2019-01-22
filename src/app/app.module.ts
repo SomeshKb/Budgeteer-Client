@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/user/login/login.component';
 import { RegisterComponent } from './component/user/register/register.component';
@@ -19,6 +18,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthGuardService } from './service/user/auth-guard.service';
 import { AddBudgetComponent } from './component/budget/add-budget/add-budget.component';
 import { LoaderComponent } from './component/shared/loader/loader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileComponent } from './component/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -31,15 +32,17 @@ import { LoaderComponent } from './component/shared/loader/loader.component';
     HeaderComponent,
     FooterComponent,
     LoaderComponent,
-    AlertComponent
+    AlertComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     FormsModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [AuthenticationService, AlertService, AuthGuardService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true }

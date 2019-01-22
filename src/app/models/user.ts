@@ -15,10 +15,9 @@ export interface UserBasicDetails {
 export interface UserProfile {
     _id: string;
     username: string;
-    name: string;
-    registered: Array<string>;
-    organised: Array<string>;
-    interested: Array<string>;
+    firstName: string;
+    lastName: string;
+    createdDate: Date;
 }
 
 export interface TokenResponse {

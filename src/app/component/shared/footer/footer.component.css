@@ -3,7 +3,7 @@
     display: flex;
     position: sticky;
     bottom: 0;
-    background: rgb(13, 114, 145);
+    background: #3e92ff;
     align-items: center;
     flex-flow: column;
     justify-content: space-evenly;
