@@ -13,7 +13,7 @@
         <dt *ngFor="let budget of budgets;let i=index">
           <!-- <a routerLink="/budget/{{budget._id}}"> -->
           <a>
-            <p>{{budget.name}} </p>
+            <p>{{budget.name | uppercase}} </p>
             <p>Cost :{{budget.cost}} </p>
             <p>Date :{{budget.createdDate|date}} </p>
             <p>Buyer :{{budgetBuyer[i]}} </p>
@@ -26,7 +26,7 @@
       <dl id="budget">
         <dt *ngFor="let budget of budgets;let i=index">
           <a>
-            <p>{{budget.name}} </p>
+            <p>{{budget.name | uppercase}} </p>
             <p>Cost :{{budget.cost}} </p>
             <p>Date :{{budget.createdDate|date}} </p>
             <p>Buyer :{{budgetBuyer[i]}} </p>

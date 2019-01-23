@@ -20,6 +20,8 @@ import { AddBudgetComponent } from './component/budget/add-budget/add-budget.com
 import { LoaderComponent } from './component/shared/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './component/user/profile/profile.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { ProfileComponent } from './component/user/profile/profile.component';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [AuthenticationService, AlertService, AuthGuardService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true }
