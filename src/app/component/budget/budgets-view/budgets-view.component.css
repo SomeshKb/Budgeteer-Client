@@ -10,12 +10,15 @@
   flex-direction: row;
   justify-content: center;
 }
+p{
+  color:rgb(6, 159, 247);
+text-align: center;
+}
 
 button {
   color:rgb(6, 159, 247);
 
-  width: 35%;
-  padding: 2%;
+  width: 15%;padding: 10px;
   display: block;
   border: none;
   border-radius: 2px;
@@ -67,4 +70,10 @@ a {
     max-width: 60%;
     margin: 0 auto 0;
   }
+  
+button {
+
+  width: 35%;
+  padding: 10px;
+}
 }

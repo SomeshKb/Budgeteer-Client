@@ -47,6 +47,7 @@ dd {
   margin-bottom: 10px;
   border-radius: 20px;
   padding-left: 30px;
+  padding-right: 30px;
 }
 
 p {
@@ -86,6 +87,11 @@ h4 {
 
 .text_dark {
   color: rgb(255, 255, 255);
+}
+#name{
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 @media only screen and (max-width: 500px) {

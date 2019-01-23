@@ -1,28 +1,29 @@
 <form [ngClass]="{'form_dark': darkModeActive}" *ngIf="userDetails" class="userForm">
-    <label [ngClass]="{'text_dark': darkModeActive}" >{{userDetails.username}}</label><br>
-    <label [ngClass]="{'text_dark': darkModeActive}" >{{userDetails.firstName}} {{userDetails.lastName}}</label><br>
-  </form>
-  
-  
-  <form [ngClass]="{'form_dark': darkModeActive}" *ngIf="publishedBudget[0]" class="itemForm">
-    <h4 [ngClass]="{'text_dark': darkModeActive}" >Items Bought by you</h4>
+  <label [ngClass]="{'text_dark': darkModeActive}">{{userDetails.username}}</label><br>
+  <label [ngClass]="{'text_dark': darkModeActive}">{{userDetails.firstName}} {{userDetails.lastName}}</label><br>
+</form>
 
-    <div *ngIf="publishedBudget[0]" class="form-group  publishedBudget">
-      <dl  [ngClass]="{'tile_dark': darkModeActive}" *ngFor="let item of publishedBudget;let i=index">
-    
-        <div *ngIf="contributors[i][0]" id="publishedBudgetDetails">
-          <dd [ngClass]="{'text_dark': darkModeActive}">{{item.name}}</dd>
-          <dd [ngClass]="{'text_dark': darkModeActive}">Desc: {{item.description}}</dd>
-          <dd [ngClass]="{'text_dark': darkModeActive}">Date: {{item.createDate}}</dd>
-          <dd [ngClass]="{'text_dark': darkModeActive}">Rs. {{item.cost}}</dd>
-          <dd>Contributors:</dd>
 
-          <dd [ngClass]="{'text_dark': darkModeActive}" *ngFor="let contriUser of item.contributors;let j=index" > <p *ngIf="contributors[i][j]">{{contributors[i][j].firstName}}</p></dd>
+<form [ngClass]="{'form_dark': darkModeActive}" *ngIf="publishedBudget[0]" class="itemForm">
+  <h4 [ngClass]="{'text_dark': darkModeActive}">Items Bought by you</h4>
 
-        </div>
-  
-      </dl>
-    </div>
-  
-  </form>
-  
+  <div *ngIf="publishedBudget[0]" class="form-group  publishedBudget">
+    <dl [ngClass]="{'tile_dark': darkModeActive}" *ngFor="let item of publishedBudget;let i=index">
+
+      <div *ngIf="contributors[i][0]" id="publishedBudgetDetails">
+        <dd id="name" [ngClass]="{'text_dark': darkModeActive}">{{item.name}}</dd>
+        <dd [ngClass]="{'text_dark': darkModeActive}">{{item.description| titlecase}}</dd>
+        <dd [ngClass]="{'text_dark': darkModeActive}">Date: {{item.createdDate|date}}</dd>
+        <dd [ngClass]="{'text_dark': darkModeActive}">Rs. {{item.cost}}</dd>
+        <dd>Contributors:</dd>
+
+        <dd [ngClass]="{'text_dark': darkModeActive}" *ngFor="let contriUser of item.contributors;let j=index">
+          <p *ngIf="contributors[i][j]">{{contributors[i][j].firstName}}</p>
+        </dd>
+
+      </div>
+
+    </dl>
+  </div>
+
+</form>

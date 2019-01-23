@@ -108,3 +108,12 @@ a {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 500px) {
+  .login-page {
+    width: 90%;
+  }
+  
+  .form {
+    max-width: 80%;
+  }
+}

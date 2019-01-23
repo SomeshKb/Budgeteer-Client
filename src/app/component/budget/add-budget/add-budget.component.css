@@ -43,10 +43,16 @@
 
   outline: none;
 }
-.form input[type=radio] {
+.form input[type=checkbox] {
   width: 10%;
   float: left;
+  background: #3e92ff;
+  border: none;    
+  border: 1px dotted dodgerblue;
+  cursor: pointer;
+
 }
+
 
 
 .submit {
@@ -74,11 +80,12 @@
 label{
   text-align: start;
   float: left;
+  color: #0a58bd;
   font-size: 12px;
 }
 
 @media only screen and (max-width: 500px) {
-  form{
-    max-width: 70%;
+  .form{
+    max-width: 60%;
   }
 }

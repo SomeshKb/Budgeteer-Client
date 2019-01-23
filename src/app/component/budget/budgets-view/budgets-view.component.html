@@ -1,37 +1,38 @@
 <div class="content">
-  <div  id="toggleButton">
-  <button [disabled]="isSettled"  (click)="togglePastButton()" type="button" class="btn">Current Budget</button>
-  <button [disabled]="!isSettled" (click)="togglePastButton()" type="button" class="btn">Past Budget</button>
-</div>
-<div *ngIf="budgets">
-  <ng-container *ngIf="budgets.length===0; else elseTemplate">
-    <p>No Budget to Show</p>
-  </ng-container>
-
-  <div class="content" *ngIf="isSettled else pastTemplate">
-    <dl id="budget">
-      <dt *ngFor="let budget of budgets;let i=index">
-        <a routerLink="/budget/{{budget._id}}">
-            <p>{{budget.name}} </p>
-            <p>Cost :{{budget.cost}} </p>
-            <p>Date :{{budget.createdDate|date}} </p>
-           <p>Buyer :{{budgetBuyer[i]}} </p>
-        </a>
-      </dt>
-    </dl>
+  <div id="toggleButton">
+    <button [disabled]="isSettled" (click)="togglePastButton()" type="button" class="btn">Current Budget</button>
+    <button [disabled]="!isSettled" (click)="togglePastButton()" type="button" class="btn">Past Budget</button>
   </div>
+  <div *ngIf="budgets">
+    <ng-container *ngIf="budgets.length===0; else elseTemplate">
+      <p>No Budget to Show</p>
+    </ng-container>
 
-  <ng-template class="content" #pastTemplate>
-    <dl id="budget">
-      <dt *ngFor="let budget of budgets;let i=index">
-        <a>
+    <div class="content" *ngIf="isSettled else pastTemplate">
+      <dl id="budget">
+        <dt *ngFor="let budget of budgets;let i=index">
+          <!-- <a routerLink="/budget/{{budget._id}}"> -->
+          <a>
             <p>{{budget.name}} </p>
             <p>Cost :{{budget.cost}} </p>
             <p>Date :{{budget.createdDate|date}} </p>
-           <p>Buyer :{{budgetBuyer[i]}} </p>
-        </a>
-      </dt>
-    </dl>
-  </ng-template>
-</div>
+            <p>Buyer :{{budgetBuyer[i]}} </p>
+          </a>
+        </dt>
+      </dl>
+    </div>
+
+    <ng-template class="content" #pastTemplate>
+      <dl id="budget">
+        <dt *ngFor="let budget of budgets;let i=index">
+          <a>
+            <p>{{budget.name}} </p>
+            <p>Cost :{{budget.cost}} </p>
+            <p>Date :{{budget.createdDate|date}} </p>
+            <p>Buyer :{{budgetBuyer[i]}} </p>
+          </a>
+        </dt>
+      </dl>
+    </ng-template>
+  </div>
 </div>

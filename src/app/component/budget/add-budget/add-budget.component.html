@@ -20,10 +20,16 @@
 
   <div *ngIf="contributors.length!=0" class="form-group type">
     <label>Contributors</label>
-    <label *ngFor="let user of contributors; let i=index">
-    <input type="checkbox" class="form-control" formControlName="contributors" [value]="user.id" (change)="onCheckChange($event)">
-    {{user.firstName}}
-    </label>
+    <div *ngFor="let user of contributors; let i=index">
+
+          <input type="checkbox" class="form-control" formControlName="contributors" [value]="user.id" (change)="onCheckChange($event)">
+          <label>{{user.firstName}}</label>
+   
+</div>
+
   </div>
+
+
+
   <input class="submit" type="submit" (click)="onSubmit()">
 </form>
