@@ -1,6 +1,6 @@
 {
-  "name": "Bugeteer-Client",
-  "short_name": "Bugeteer-Client",
+  "name": "Budgeteer-Client",
+  "short_name": "Budgeteer-Client",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

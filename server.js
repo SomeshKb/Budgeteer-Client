@@ -5,11 +5,11 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/Bugeteer-Client'));
+app.use(express.static(__dirname + '/dist/Budgeteer-Client'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/Bugeteer-Client/index.html'));
+res.sendFile(path.join(__dirname+'/dist/Budgeteer-Client/index.html'));
 });
 
 
