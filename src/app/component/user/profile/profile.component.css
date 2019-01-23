@@ -1,150 +1,114 @@
-.userForm {
-    position: relative;
-    z-index: 1;
-    background: #FFFFFF;
-    max-width: 50%;
-    margin: 0 auto 100px;
-    padding: 20px;
-    text-align: center;
-    align-content: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  
-  #userImage {
-    width: 25%;
-    /* background: #343434; */
-    height: 150px;
-    margin: 0 auto;
-  }
+.userForm,
+.itemForm {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 50%;
+  margin: 0 auto 100px;
+  padding: 20px;
+  text-align: center;
+  color: rgb(50, 190, 255);
+  align-content: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 
+.publishedBudget {
 
+  list-style-type: none;
+  padding: 3%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 46% 46%;
+  grid-column-gap: 3%;
+  text-align: left;
+  /* grid-gap: 4%; */
+}
+
+label {
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+dd {
+  margin-inline-start: 0%;
+}
+
+#publishedBudgetDetails {
+  box-shadow: 0 0 10px 0 rgba(12, 168, 240, 0.918), 0 2px 2px 0 rgba(12, 168, 240, 0.918);
+  /* border: 2px solid #CE93D8; */
+  list-style-type: none;
+  color: rgb(12, 168, 240);
+  left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding-left: 30px;
+}
+
+p {
+  padding: 0%;
+  margin: 0%;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+#button-group {
+  width: 100%;
+  margin: 0%;
+}
+
+button {
+  width: 45%;
+  text-align: center;
+  margin: 1px;
+  color: #FFFFFF;
+}
+
+h4 {
+  margin: 5%;
+  color: rgb(32, 128, 173);
+
+}
+
+.form_dark {
+  background: rgb(1, 58, 104);
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.2), 0 4px 4px 0 rgba(255, 255, 255, 0.24);
+}
+
+.tile_dark {
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.2), 0 2px 2px 0 rgba(255, 255, 255, 0.24);
+
+}
+
+.text_dark {
+  color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 500px) {
+
+  .userForm,
+  .itemForm {
+    max-width: 70%;
+  }
   .publishedBudget {
 
     list-style-type: none;
     padding: 3%;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 24% 24% 24% 24%;
-    grid-column-gap: 1%;
+    display: flex;
+    flex-flow: column;
+    text-align: left;
     /* grid-gap: 4%; */
   }
-  
-  #publishedBudgetDetails {
-    box-shadow: 0 0 10px 0 rgba(124, 124, 124, 0.918), 0 2px 2px 0 rgba(128, 128, 128, 0.918);
-    /* border: 2px solid #CE93D8; */
-    list-style-type: none;
-    left: 0;
-    padding-top: 4px;
-    align-items: center;
-    margin-bottom: 10px;
-    border-radius: 20px;
-  }
-  
-
- 
-  p{
+  dl {
+    width: 100%;
     padding: 0%;
     margin: 0%;
   }
-  
-  #button-group {
-    width: 100%;
-    margin: 0%;
-  }
-  
-  button {
-    width: 45%;
-    text-align: center;
-    margin: 1px;
-    color: #FFFFFF;
-  }
-  
-  h4 {
-    margin: 5%;
-  }
-  
-  .form_dark{
-   background: rgb(36, 29, 73);
-   box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.2), 0 4px 4px 0 rgba(255, 255, 255, 0.24);
-  }
-  
-  .tile_dark{
-   box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.2), 0 2px 2px 0 rgba(255, 255, 255, 0.24);
-  
-  }
-  
-  .text_dark {
-    color: rgb(255, 255, 255);
-  }
-  
-  .image_dark{
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.2), 0 4px 4px 0 rgba(255, 255, 255, 0.24);
-  }
-  
-  @media only screen and (max-width: 700px) {
-  
-    .userForm,
-    .budgetForm {
-      max-width: 90%;
-    }
-  
-    #userImage {
-      margin: 0%;
-      margin-left: 25%;
-      width: 50%;
-    }
-  
-    #image-content {
-      height: 100%;
-      margin: 0%;
-      width: 60%;
-    }
-  
-    img {
-      height: 100%;
-      width: 100%;
-      margin: 0%;
-  
-    }
-  
-    #publishedBudgetDetails {
-      font-size: 15px;
-      padding: 0%;
-    }
-  
-    dd {
-      margin: 0%;
-      padding: 1%;
-    }
-  
-    #button-group {
-      display: flex;
-      width: 100%;
-      flex-direction: row;
-    }
-  
-    button {
-      padding: 1%;
-      margin: 1%;
-      text-align: center;
-      width: 100%;
-      font-size: 15px;
-    }
-  
-    .btn-warning {
-      width: 50%;
-      padding: 0%;
-      margin: 0%;
-  
-    }
-  
-    dl {
-      width: 100%;
-      padding: 0%;
-      margin: 0%;
-    }
-  
-  }
-  
+
+
+}
