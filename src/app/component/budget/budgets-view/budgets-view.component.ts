@@ -33,7 +33,6 @@ export class BudgetsViewComponent implements OnInit {
   ngOnInit() {
     this.budgetService.getBudgets().subscribe(budgets => {
       this.budgetService.currentBudget.next(budgets);
-      console.log(budgets);
     });
   }
 
@@ -54,11 +53,9 @@ export class BudgetsViewComponent implements OnInit {
 
       if (budget.hasSettled) {
         this.pastBudgets.push(budget);
-        console.log('past ');
 
       } else {
         this.upComingBudgets.push(budget);
-        console.log('upcoming ');
       }
     });
   }

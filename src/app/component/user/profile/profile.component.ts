@@ -26,10 +26,9 @@ export class ProfileComponent implements OnInit {
       this.userDetails = res;
       res.budgetBuyer.map((id, index) => {
         this.budgetService.getBudget(id).subscribe(budget => {
-          this.publishedBudget.push(budget); console.log(this.publishedBudget);
+          this.publishedBudget.push(budget);
           this.contributors[index] = [];
           budget.contributors.map(userId => {
-            // console.log(userId);
             this.auth.getUserName(userId).subscribe(user => {
               this.contributors[index].push(user);
             });

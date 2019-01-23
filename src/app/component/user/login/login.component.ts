@@ -48,7 +48,6 @@ export class LoginComponent implements OnInit {
     this.auth.login(credentials)
       .subscribe(() => {
         this.auth.isUserLoggedIn.next(true);
-        console.log('Done');
         this.router.navigateByUrl('/home');
       }, (err) => {
         if (err.status === 400) {

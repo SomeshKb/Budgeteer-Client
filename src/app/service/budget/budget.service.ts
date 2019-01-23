@@ -5,6 +5,7 @@ import { BudgetDetails } from 'src/app/models/budget';
 import { catchError } from 'rxjs/operators';
 import { AuthenticationService } from '../user/authentication.service';
 import { environment } from '../../../environments/environment';
+import { AlertService } from '../shared/alert.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class BudgetService {
 
   private budgetUrl = environment.baseUrl + '/budgets';
 
-  constructor(private http: HttpClient, private auth: AuthenticationService) { }
+  constructor(private http: HttpClient, private auth: AuthenticationService, private alertService: AlertService) { }
 
   //  GET budget from the server
   getBudgets(): Observable<BudgetDetails[]> {
@@ -48,7 +49,7 @@ export class BudgetService {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     // window.alert(errorMessage);
-    console.log(errorMessage);
+    this.alertService.error(errorMessage);
     return throwError(errorMessage);
   }
 }

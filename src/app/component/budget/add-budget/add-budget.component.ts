@@ -36,7 +36,6 @@ export class AddBudgetComponent implements OnInit {
 
     this.auth.allProfileName().subscribe(res => {
       this.contributors = res;
-      console.log(res);
     });
 
     this.createForm = this.formBuilder.group({
@@ -54,12 +53,10 @@ export class AddBudgetComponent implements OnInit {
     this.submitted = true;
 
     if (this.createForm.invalid) {
-      console.log(this.createForm);
       return;
     } else {
       this.createForm.controls['contributors'].setValue(this.selectedContributor);
       this.createForm.controls['buyer'].setValue(this.userID);
-      console.log(this.createForm.value);
       this.budgetService.postBudget(this.createForm.value).subscribe(res => {
         this.submitted = false;
         this.alertService.success('Budget Details Added');
