@@ -2,7 +2,7 @@
   <nav class="slide-menu" [ngClass]="{'slide-menu-active': showMenu}" (click)="$event.stopImmediatePropagation();">
     <section [ngClass]="{'menu_header-dark': darkModeActive}" class="menu-header">
       <div class="profile-image__container">
-        <img src="src/assets/account.png" alt="profile-image" class="profile__image">
+        <img src="assets/account.png" alt="profile-image" class="profile__image">
       </div>
       <div *ngIf="isUserLoggedIn && user" class="account-details">
         <span class="email__text">{{user.username | uppercase}}</span>
@@ -28,7 +28,7 @@
 
 
 <header [ngClass]="{'main__header-dark': darkModeActive}" class="main__header">
-  <img *ngIf="isUserLoggedIn" src="src/assets/menu.png" (click)="toggleMenu()">
+  <img *ngIf="isUserLoggedIn" src="assets/menu.png" (click)="toggleMenu()">
   <span><a (click)="getAllData()">Home</a></span>
   <span><a *ngIf="isUserLoggedIn" [routerLink]="['/budget/add']">Add budget</a></span>
   <span><a *ngIf="isUserLoggedIn && user" routerLink="/account">{{user.firstName| uppercase }}</a></span>

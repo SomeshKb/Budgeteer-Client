@@ -10,12 +10,12 @@
 
   <div class="content" *ngIf="isSettled else pastTemplate">
     <dl id="budget">
-      <dt *ngFor="let budget of budgets">
+      <dt *ngFor="let budget of budgets;let i=index">
         <a routerLink="/budget/{{budget._id}}">
             <p>{{budget.name}} </p>
             <p>Cost :{{budget.cost}} </p>
             <p>Date :{{budget.createdDate|date}} </p>
-           <!-- <p>Buyer :{{budget.buyer}} </p>-->
+           <p>Buyer :{{budgetBuyer[i]}} </p>
         </a>
       </dt>
     </dl>
@@ -23,12 +23,12 @@
 
   <ng-template class="content" #pastTemplate>
     <dl id="budget">
-      <dt *ngFor="let budget of budgets">
+      <dt *ngFor="let budget of budgets;let i=index">
         <a>
             <p>{{budget.name}} </p>
             <p>Cost :{{budget.cost}} </p>
             <p>Date :{{budget.createdDate|date}} </p>
-           <!-- <p>Buyer :{{budget.buyer}} </p> -->
+           <p>Buyer :{{budgetBuyer[i]}} </p>
         </a>
       </dt>
     </dl>

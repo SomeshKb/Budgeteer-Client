@@ -12,8 +12,13 @@
 }
 
 button {
-  color: white;
-  width: 15%;
+  color:rgb(6, 159, 247);
+
+  width: 35%;
+  padding: 2%;
+  display: block;
+  border: none;
+  border-radius: 2px;
 }
 
 button[disabled] {

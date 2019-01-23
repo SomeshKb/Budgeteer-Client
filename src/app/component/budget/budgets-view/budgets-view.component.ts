@@ -15,6 +15,7 @@ export class BudgetsViewComponent implements OnInit {
   isSettled = false;
   pastBudgets: BudgetDetails[];
   upComingBudgets: BudgetDetails[];
+  budgetBuyer: any[] = [];
 
   constructor(private auth: AuthenticationService, private budgetService: BudgetService) {
     if (auth.isLoggedIn()) {
@@ -22,6 +23,11 @@ export class BudgetsViewComponent implements OnInit {
     }
     this.budgetService.currentBudget.subscribe(budgets => {
       this.checkForSettledBudget(budgets);
+      budgets.map(budget => {
+        this.auth.getUserName(budget.buyer).subscribe(details => {
+          this.budgetBuyer.push(details.username);
+        });
+      });
       this.isSettled = false;
       this.togglePastButton();
     });
