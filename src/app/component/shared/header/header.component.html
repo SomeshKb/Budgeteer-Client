@@ -29,13 +29,9 @@
 
 <header [ngClass]="{'main__header-dark': darkModeActive}" class="main__header">
   <img *ngIf="isUserLoggedIn" src="src/assets/menu.png" (click)="toggleMenu()">
-
-  <div class="right-header">
-    <span><a (click)="getAllData()">Home</a></span>
-    <span><a *ngIf="isUserLoggedIn" [routerLink]="['/budget/add']">Add budget</a></span>
-    <span><a *ngIf="isUserLoggedIn && user" routerLink="/account">{{user.firstName| uppercase }}</a></span>
-    <span *ngIf="isUserLoggedIn" id="logout"><a (click)="logoutUser()">Log-out</a></span>
-    <span *ngIf="!isUserLoggedIn"><a routerLink="/login">LogIn</a></span>
-  </div>
+  <span><a (click)="getAllData()">Home</a></span>
+  <span><a *ngIf="isUserLoggedIn" [routerLink]="['/budget/add']">Add budget</a></span>
+  <span><a *ngIf="isUserLoggedIn && user" routerLink="/account">{{user.firstName| uppercase }}</a></span>
+  <span *ngIf="isUserLoggedIn" id="logout"><a (click)="logoutUser()">Log-out</a></span>
 
 </header>
