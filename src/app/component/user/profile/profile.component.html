@@ -10,17 +10,17 @@
   <div *ngIf="publishedBudget[0]" class="form-group  publishedBudget">
     <dl [ngClass]="{'tile_dark': darkModeActive}" *ngFor="let item of publishedBudget;let i=index">
 
-      <div *ngIf="contributors[i][0]" id="publishedBudgetDetails">
+      <div *ngIf="contributors[i]" id="publishedBudgetDetails">
         <dd id="name" [ngClass]="{'text_dark': darkModeActive}">{{item.name}}</dd>
         <dd [ngClass]="{'text_dark': darkModeActive}">{{item.description| titlecase}}</dd>
         <dd [ngClass]="{'text_dark': darkModeActive}">Date: {{item.createdDate|date}}</dd>
         <dd [ngClass]="{'text_dark': darkModeActive}">Rs. {{item.cost}}</dd>
         <dd>Contributors:</dd>
-
         <dd [ngClass]="{'text_dark': darkModeActive}" *ngFor="let contriUser of item.contributors;let j=index">
           <p *ngIf="contributors[i][j]">{{contributors[i][j].firstName}}</p>
         </dd>
-        <button (click)="budgetSettled(item.id)">Settled</button>
+        <dd>Status:{{item.hasSettled?"Completed":"Not Completed"}}</dd>
+        <button [disabled]="item.hasSettled"(click)="budgetSettled(item.id)">Settle It</button>
       </div>
 
     </dl>

@@ -40,14 +40,19 @@ dd {
   /* border: 2px solid #CE93D8; */
   list-style-type: none;
   color: rgb(12, 168, 240);
+  overflow: hidden;
+  word-wrap: break-word;
   left: 0;
   padding-top: 20px;
   padding-bottom: 20px;
-  align-items: center;
   margin-bottom: 10px;
   border-radius: 20px;
   padding-left: 30px;
   padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
 }
 
 p {
@@ -57,16 +62,20 @@ p {
   padding-left: 10px;
 }
 
-#button-group {
-  width: 100%;
-  margin: 0%;
+button {
+  width: 40%;
+  text-align: center;
+  color: white;
+  margin: 10px auto 0%;
+  background:#5fbfff;
+  border: none;padding: 5px;
+  border-radius: 5px;
 }
 
-button {
-  width: 45%;
-  text-align: center;
-  margin: 1px;
-  color: #FFFFFF;
+button:hover {
+  background:#3e82ff;
+
+  cursor: pointer;
 }
 
 h4 {
@@ -93,7 +102,9 @@ h4 {
   text-transform: uppercase;
   margin: 0;
 }
-
+button:disabled{
+  display: none;
+}
 @media only screen and (max-width: 500px) {
 
   .userForm,
@@ -115,6 +126,12 @@ h4 {
     padding: 0%;
     margin: 0%;
   }
+  
+button {
+  width: 70%;
+
+}
+
 
 
 }

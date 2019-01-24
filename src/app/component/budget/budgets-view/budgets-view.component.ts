@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BudgetDetails } from 'src/app/models/budget';
 import { AuthenticationService } from 'src/app/service/user/authentication.service';
 import { BudgetService } from '../../../service/budget/budget.service';
-import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-budgets-view',
@@ -25,7 +24,7 @@ export class BudgetsViewComponent implements OnInit {
       this.checkForSettledBudget(budgets);
       budgets.map(budget => {
         this.auth.getUserName(budget.buyer).subscribe(details => {
-          this.budgetBuyer.push(details.email);
+          this.budgetBuyer.push(details.firstName);
         });
       });
       this.isSettled = false;

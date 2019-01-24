@@ -16,11 +16,11 @@ text-align: center;
 }
 
 button {
-  color:rgb(6, 159, 247);
-
+  color:rgb(88, 222, 255);
+background: rgb(255, 255, 255);
   width: 15%;padding: 10px;
   display: block;
-  border: none;
+  border: 1px solid rgb(88, 222, 255);
   border-radius: 2px;
 }
 
@@ -34,6 +34,7 @@ dl {
 
   list-style-type: none;
   padding: 3%;
+  word-wrap: break-word;
   overflow: hidden;
   display: grid;
   grid-template-columns: 19% 19% 19% 19% 19%;
@@ -46,6 +47,7 @@ dt {
   /* border: 2px solid #CE93D8; */
   list-style-type: none;
   left: 0;
+  word-wrap: break-word;
   padding: 4px;
   align-items: center;
   margin-bottom: 10px;
@@ -67,6 +69,7 @@ a {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+  word-wrap: break-word;
     max-width: 60%;
     margin: 0 auto 0;
   }

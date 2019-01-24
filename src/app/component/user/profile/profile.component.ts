@@ -3,7 +3,6 @@ import { AuthenticationService } from '../../../service/user/authentication.serv
 import { UserDetails, UserProfile } from '../../../models/user';
 import { BudgetDetails } from '../../../models/budget';
 import { BudgetService } from '../../../service/budget/budget.service';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
