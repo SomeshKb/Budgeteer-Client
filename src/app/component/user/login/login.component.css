@@ -8,6 +8,7 @@
 .form {
   position: relative;
   z-index: 1;
+  color: rgb(0, 204, 255);
   background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 10px;

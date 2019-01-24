@@ -5,7 +5,7 @@
         <img src="assets/account.png" alt="profile-image" class="profile__image">
       </div>
       <div *ngIf="isUserLoggedIn && user" class="account-details">
-        <span class="email__text">{{user.username | uppercase}}</span>
+        <span class="email__text">{{user.email | uppercase}}</span>
       </div>
     </section>
 

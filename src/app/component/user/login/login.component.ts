@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('/home');
     }
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }

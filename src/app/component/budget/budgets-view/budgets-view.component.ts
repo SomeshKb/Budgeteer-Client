@@ -25,7 +25,7 @@ export class BudgetsViewComponent implements OnInit {
       this.checkForSettledBudget(budgets);
       budgets.map(budget => {
         this.auth.getUserName(budget.buyer).subscribe(details => {
-          this.budgetBuyer.push(details.username);
+          this.budgetBuyer.push(details.email);
         });
       });
       this.isSettled = false;

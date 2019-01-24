@@ -2,10 +2,12 @@
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// const url = require('./../../proxy.conf.json');
+
 export const environment = {
   production: false,
-  baseUrl: 'https://budgeteer-sever.herokuapp.com/api'
-  //  baseUrl: 'http://localhost:4000/api'
+  // baseUrl: 'https://budgeteer-sever.herokuapp.com/api'
+   baseUrl: 'http://localhost:4000/api'
 };
 
 /*

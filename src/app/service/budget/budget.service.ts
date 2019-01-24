@@ -39,6 +39,12 @@ export class BudgetService {
       .pipe(catchError(this.handleError));
   }
 
+  hasSettled(id: any, body) {
+    const url = `${this.budgetUrl}/settled/${id}`;
+    return this.http.put(url, body, { headers: { Authorization: `Bearer ${this.auth.getToken()}` } })
+      .pipe(catchError(this.handleError));
+  }
+
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

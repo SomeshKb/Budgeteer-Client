@@ -1,6 +1,6 @@
 export interface UserDetails {
     _id: string;
-    username: string;
+    email: string;
     firstName: string;
     exp: number;
     iat: number;
@@ -8,16 +8,17 @@ export interface UserDetails {
 
 export interface UserBasicDetails {
     _id: string;
-    username: string;
+    email: string;
     name: string;
 }
 
 export interface UserProfile {
     _id: string;
-    username: string;
+    email: string;
     firstName: string;
     lastName: string;
     createdDate: Date;
+    budgetBuyer: Array<string>;
 }
 
 export interface TokenResponse {
@@ -25,6 +26,6 @@ export interface TokenResponse {
 }
 
 export interface TokenPayload {
-    username: string;
+    email: string;
     password: string;
 }

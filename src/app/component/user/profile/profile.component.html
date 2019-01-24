@@ -1,5 +1,5 @@
 <form [ngClass]="{'form_dark': darkModeActive}" *ngIf="userDetails" class="userForm">
-  <label [ngClass]="{'text_dark': darkModeActive}">{{userDetails.username}}</label><br>
+  <label [ngClass]="{'text_dark': darkModeActive}">{{userDetails.email}}</label><br>
   <label [ngClass]="{'text_dark': darkModeActive}">{{userDetails.firstName}} {{userDetails.lastName}}</label><br>
 </form>
 
@@ -20,7 +20,7 @@
         <dd [ngClass]="{'text_dark': darkModeActive}" *ngFor="let contriUser of item.contributors;let j=index">
           <p *ngIf="contributors[i][j]">{{contributors[i][j].firstName}}</p>
         </dd>
-
+        <button (click)="budgetSettled(item.id)">Settled</button>
       </div>
 
     </dl>
