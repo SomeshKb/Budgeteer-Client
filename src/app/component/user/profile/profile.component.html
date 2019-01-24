@@ -1,29 +1,52 @@
-<form [ngClass]="{'form_dark': darkModeActive}" *ngIf="userDetails" class="userForm">
-  <label [ngClass]="{'text_dark': darkModeActive}">{{userDetails.email}}</label><br>
-  <label [ngClass]="{'text_dark': darkModeActive}">{{userDetails.firstName}} {{userDetails.lastName}}</label><br>
+<form *ngIf="userDetails" class="userForm">
+  <label >{{userDetails.email}}</label><br>
+  <label >{{userDetails.firstName}} {{userDetails.lastName}}</label><br>
 </form>
 
+<div class="button-group">
+  <button [disabled]=isOpenBudget (click)="toggleBudget()">Current Budget</button>
+  <button [disabled]=!isOpenBudget (click)="toggleBudget()">Past Budget</button>
+</div>
 
-<form [ngClass]="{'form_dark': darkModeActive}" *ngIf="publishedBudget[0]" class="itemForm">
-  <h4 [ngClass]="{'text_dark': darkModeActive}">Items Bought by you</h4>
+<form *ngIf="publishedBudget[0]&&!isOpenBudget" class="itemForm">
+  <h4>Past Items Bought by you</h4>
 
-  <div *ngIf="publishedBudget[0]" class="form-group  publishedBudget">
-    <dl [ngClass]="{'tile_dark': darkModeActive}" *ngFor="let item of publishedBudget;let i=index">
-
-      <div *ngIf="contributors[i]" id="publishedBudgetDetails">
-        <dd id="name" [ngClass]="{'text_dark': darkModeActive}">{{item.name}}</dd>
-        <dd [ngClass]="{'text_dark': darkModeActive}">{{item.description| titlecase}}</dd>
-        <dd [ngClass]="{'text_dark': darkModeActive}">Date: {{item.createdDate|date}}</dd>
-        <dd [ngClass]="{'text_dark': darkModeActive}">Rs. {{item.cost}}</dd>
+  <div class="form-group  publishedBudget">
+    <dl *ngFor="let item of publishedBudget;let i=index">
+      <div *ngIf="contributors[i]&&item.hasSettled" id="publishedBudgetDetails">
+        <dd id="name">{{item.name}}</dd>
+        <dd>{{item.description| titlecase}}</dd>
+        <dd>Date: {{item.createdDate|date}}</dd>
+        <dd>Rs. {{item.cost}}</dd>
         <dd>Contributors:</dd>
-        <dd [ngClass]="{'text_dark': darkModeActive}" *ngFor="let contriUser of item.contributors;let j=index">
+        <dd *ngFor="let contriUser of item.contributors;let j=index">
           <p *ngIf="contributors[i][j]">{{contributors[i][j].firstName}}</p>
         </dd>
         <dd>Status:{{item.hasSettled?"Completed":"Not Completed"}}</dd>
-        <button [disabled]="item.hasSettled"(click)="budgetSettled(item.id)">Settle It</button>
+        <button [disabled]="item.hasSettled" (click)="budgetSettled(item.id)">Settle It</button>
       </div>
-
     </dl>
   </div>
+</form>
 
+
+<form  *ngIf="publishedBudget[0]&&isOpenBudget" class="itemForm">
+  <h4>Items Bought by you</h4>
+
+  <div *ngIf="publishedBudget[0]" class="form-group  publishedBudget">
+    <section *ngFor="let item of publishedBudget;let i=index">
+      <section *ngIf="contributors[i]&&!item.hasSettled" id="publishedBudgetDetails">
+        <dd id="name">{{item.name}}</dd>
+        <dd >{{item.description| titlecase}}</dd>
+        <dd >Date: {{item.createdDate|date}}</dd>
+        <dd >Rs. {{item.cost}}</dd>
+        <dd>Contributors:</dd>
+        <dd *ngFor="let contriUser of item.contributors;let j=index">
+          <p *ngIf="contributors[i][j]">{{contributors[i][j].firstName}}</p>
+        </dd>
+        <dd>Status:{{item.hasSettled?"Completed":"Not Completed"}}</dd>
+        <button [disabled]="item.hasSettled" (click)="budgetSettled(item.id)">Settle It</button>
+      </section>
+    </section>
+  </div>
 </form>

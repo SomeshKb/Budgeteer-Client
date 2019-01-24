@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit {
   userDetails: UserProfile;
   publishedBudget: BudgetDetails[] = [];
   contributors = [];
+  isOpenBudget: Boolean = true;
 
   constructor(private auth: AuthenticationService, private budgetService: BudgetService) {
     if (this.auth.isLoggedIn()) {
@@ -47,10 +48,15 @@ export class ProfileComponent implements OnInit {
     return;
   }
   budgetSettled(id) {
-    this.budgetService.hasSettled(id, true).subscribe(res => {
-      // this.getUserBudget(this.userDetails);
-    });
-    console.log(id);
+    // this.budgetService.hasSettled(id, true).subscribe(res => {
+    //   // this.getUserBudget(this.userDetails);
+    // });
+    console.log(this.publishedBudget);
+    console.log(this.contributors);
+  }
+
+  toggleBudget() {
+    this.isOpenBudget = !this.isOpenBudget;
   }
 
 }
