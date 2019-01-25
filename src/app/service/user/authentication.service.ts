@@ -99,7 +99,7 @@ export class AuthenticationService {
         return data;
       })
     );
-    return request.pipe(first());
+    return request;
 
   }
 

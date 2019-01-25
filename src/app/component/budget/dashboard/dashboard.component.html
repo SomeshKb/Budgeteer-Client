@@ -6,15 +6,21 @@
 
   <div class="budget" *ngIf="settledBudget">
     <section class="budgetDetails" *ngFor="let user of contributorDetails; let i=index">
+      <dl *ngIf="user">
       <dd>UserName:{{user.firstName |uppercase }}<dd>
       <dd>Share:{{expensesPerUser[i]}}<dd>
-    </section>
+      <dd>Total Spend:{{totalSpend[i]}}<dd>
+        <dd>{{expensesPerUser[i]-totalSpend[i]>0?"Credit balance":"Due balance"}}:{{expensesPerUser[i]-totalSpend[i]}}</dd>
+      </dl>
+      </section>
   </div>
   
   <div class="budget" *ngIf="!settledBudget">
     <section class="budgetDetails" *ngFor="let user of contributorDetails; let i=index">
       <dd>UserName:{{user.firstName |uppercase }}<dd>
       <dd>Share:{{expensesPerUser[i]}}<dd>
+          <dd>Total Spend:{{totalSpend[i]}}<dd>
+
     </section>
   </div>
 </section>
