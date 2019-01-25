@@ -11,6 +11,7 @@
 
     <section class="menu-body">
       <span class="nav_text" *ngIf="isUserLoggedIn" routerLink="/account" (click)="toggleMenu()">My Account</span>
+      <span class="nav_text" *ngIf="isUserLoggedIn" routerLink="/dashboard" (click)="toggleMenu()">Dashboard</span>
       <span class="nav_text" *ngIf="isUserLoggedIn" [routerLink]="[ '/budget/add']" (click)="toggleMenu()">Add Budget</span>
       <!-- toggle menu -->
       <div class="mode-toggle__container">

@@ -1,19 +1,18 @@
-<form *ngIf="userDetails" class="userForm">
+<section *ngIf="userDetails" class="userForm">
   <label >{{userDetails.email}}</label><br>
   <label >{{userDetails.firstName}} {{userDetails.lastName}}</label><br>
-</form>
+</section>
 
 <div class="button-group">
   <button [disabled]=isOpenBudget (click)="toggleBudget()">Current Budget</button>
   <button [disabled]=!isOpenBudget (click)="toggleBudget()">Past Budget</button>
 </div>
 
-<form *ngIf="publishedBudget[0]&&!isOpenBudget" class="itemForm">
+<section *ngIf="publishedBudget[0]&&!isOpenBudget" class="itemForm">
   <h4>Past Items Bought by you</h4>
+  <section class="budget" *ngFor="let item of publishedBudget;let i=index">
+      <section class="budgetDetails" *ngIf="contributors[i]&&item.hasSettled"  >
 
-  <div class="form-group  publishedBudget">
-    <dl *ngFor="let item of publishedBudget;let i=index">
-      <div *ngIf="contributors[i]&&item.hasSettled" id="publishedBudgetDetails">
         <dd id="name">{{item.name}}</dd>
         <dd>{{item.description| titlecase}}</dd>
         <dd>Date: {{item.createdDate|date}}</dd>
@@ -24,18 +23,16 @@
         </dd>
         <dd>Status:{{item.hasSettled?"Completed":"Not Completed"}}</dd>
         <button [disabled]="item.hasSettled" (click)="budgetSettled(item.id)">Settle It</button>
-      </div>
-    </dl>
-  </div>
-</form>
+      </section>
+    </section>
+  </section>
 
 
-<form  *ngIf="publishedBudget[0]&&isOpenBudget" class="itemForm">
+<section  *ngIf="publishedBudget[0]&&isOpenBudget" class="itemForm" >
   <h4>Items Bought by you</h4>
 
-  <div *ngIf="publishedBudget[0]" class="form-group  publishedBudget">
-    <section *ngFor="let item of publishedBudget;let i=index">
-      <section *ngIf="contributors[i]&&!item.hasSettled" id="publishedBudgetDetails">
+    <section class="budget" *ngFor="let item of publishedBudget;let i=index">
+      <section class="budgetDetails" *ngIf="contributors[i]&&!item.hasSettled"  >
         <dd id="name">{{item.name}}</dd>
         <dd >{{item.description| titlecase}}</dd>
         <dd >Date: {{item.createdDate|date}}</dd>
@@ -48,5 +45,4 @@
         <button [disabled]="item.hasSettled" (click)="budgetSettled(item.id)">Settle It</button>
       </section>
     </section>
-  </div>
-</form>
+</section>

@@ -1,0 +1,20 @@
+<section class="content">
+  <div class="button-group">
+    <button [disabled]=!isSettled (click)="toggleBudget()">OnGoing Budget</button>
+    <button [disabled]=isSettled (click)="toggleBudget()">Old Budget</button>
+  </div>
+
+  <div class="budget" *ngIf="settledBudget">
+    <section class="budgetDetails" *ngFor="let user of contributorDetails; let i=index">
+      <dd>UserName:{{user.firstName |uppercase }}<dd>
+      <dd>Share:{{expensesPerUser[i]}}<dd>
+    </section>
+  </div>
+  
+  <div class="budget" *ngIf="!settledBudget">
+    <section class="budgetDetails" *ngFor="let user of contributorDetails; let i=index">
+      <dd>UserName:{{user.firstName |uppercase }}<dd>
+      <dd>Share:{{expensesPerUser[i]}}<dd>
+    </section>
+  </div>
+</section>

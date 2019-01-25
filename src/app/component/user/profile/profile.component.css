@@ -3,7 +3,7 @@
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 50%;
+  max-width: 680px;
   margin: 0 auto 100px;
   padding: 20px;
   text-align: center;
@@ -13,50 +13,26 @@
   margin-bottom: 10px;
   margin-top: 10px;
 }
+.itemForm {
+  max-width: 480px;
 
-
-.publishedBudget {
-
-  list-style-type: none;
-  padding: 3%;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 46% 46%;
-  grid-column-gap: 3%;
-  text-align: left;
-  /* display: flex;
-  flex-direction: row; */
-
-  /* grid-gap: 4%; */
+}
+.budget {
+ display: flex;
+ flex-direction: column;
+}
+.budgetDetails {
+  width: 85%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px ;
+  margin: 0px auto 10px;
+  border-radius: 5px;
+  
 }
 
 label {
   font-size: 16px;
   padding-left: 10px;
-}
-
-dd {
-  margin-inline-start: 0%;
-}
-
-#publishedBudgetDetails {
-  box-shadow: 0 0 10px 0 rgba(12, 168, 240, 0.918), 0 2px 2px 0 rgba(12, 168, 240, 0.918);
-  /* border: 2px solid #CE93D8; */
-  list-style-type: none;
-  color: rgb(12, 168, 240);
-  overflow: hidden;
-  word-wrap: break-word;
-  left: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 10px;
-  border-radius: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-
 }
 
 p {
@@ -108,7 +84,9 @@ h4 {
   text-transform: uppercase;
   margin: 0;
 }
-
+dd{
+  margin-inline-start: 0%;
+}
 button:disabled {
   display: none;
 }
@@ -142,9 +120,21 @@ button:disabled {
   background: #5fbfff;
 }
 
+@media only screen and (max-width: 800px) {
+  .button-group {
+    display: flex;
+    flex-flow: row;
+    max-width: 55%;
+    margin: 0 auto 0;
+  }
+  .userForm{
+    max-width: 480px;
+  }
+
+}
 
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 650px) {
 
   .userForm,
   .itemForm {
@@ -191,12 +181,3 @@ button:disabled {
 
 }
 
-@media only screen and (max-width: 950px) {
-  .button-group {
-    display: flex;
-    flex-flow: row;
-    max-width: 75%;
-    margin: 0 auto 0;
-  }
-
-}

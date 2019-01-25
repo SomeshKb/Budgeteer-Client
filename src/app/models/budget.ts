@@ -1,3 +1,4 @@
+import { UserProfile } from './user';
 export interface BudgetDetails {
     _id: string;
     name: string;
@@ -9,14 +10,7 @@ export interface BudgetDetails {
     hasSettled: boolean;
 }
 
-export interface BudgetBasicDetails {
-    _id: string;
-    name: string;
-    city: string;
-    date: string;
-    displayImageUrl: string;
-}
-export interface Item {
-    name: string;
-    cost: number;
+export interface ContributionDetails {
+    user: UserProfile;
+    share: Number;
 }

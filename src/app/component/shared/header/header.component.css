@@ -249,6 +249,7 @@ span a:hover {
 .nav_text {
   margin-left: 2rem;
   margin-top: 2rem;
+  outline: none;
 }
 .nav_text:hover {
   cursor: pointer;

@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './component/user/profile/profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { DashboardComponent } from './component/budget/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { environment } from '../environments/environment';
     FooterComponent,
     LoaderComponent,
     AlertComponent,
-    ProfileComponent
+    ProfileComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

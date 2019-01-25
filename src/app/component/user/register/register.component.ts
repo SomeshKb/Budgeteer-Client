@@ -32,11 +32,11 @@ export class RegisterComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-    console.log(this.registerForm);
     this.submitted = true;
     if (this.registerForm.invalid) {
       return;
     } else {
+    console.log(this.registerForm.value);
       this.register(this.registerForm.value);
     }
   }

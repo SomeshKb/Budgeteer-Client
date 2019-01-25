@@ -1,0 +1,130 @@
+.content {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 560px;
+    margin: 0 auto 100px;
+    padding: 20px;
+    text-align: center;
+    color: rgb(50, 190, 255);
+    align-content: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .budget {
+   display: flex;
+   flex-direction: column;
+  }
+  .budgetDetails {
+    width: 45%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    padding: 10px ;
+    margin: 0px auto 10px;
+    border-radius: 5px;
+    
+  }
+  
+  button {
+    width: 40%;
+    text-align: center;
+    color: white;
+    margin: 10px auto 0%;
+    background: #5fbfff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background: #3e82ff;
+    cursor: pointer;
+  }
+  
+  h4 {
+    margin: 5%;
+    color: rgb(32, 128, 173);
+  }
+  
+  dd{
+    margin-inline-start: 0%;
+  }
+  button:disabled {
+    display: none;
+  }
+  
+  .button-group {
+    max-width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 20px;
+  }
+  
+  .button-group>button {
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0%;
+    background: #FFFFFF;
+    color: #5fbfff;
+    border-radius: 2px;
+    border: 1px solid #5fbfff;
+  }
+  
+  .button-group>button :hover {
+    color: white;
+    background: #5fbfff;
+  }
+  
+  .button-group>button:disabled {
+    display: block;
+    color: #FFFFFF;
+    background: #5fbfff;
+  }
+  
+ 
+  
+  @media only screen and (max-width: 650px) {
+  
+    .content {
+      max-width: 70%;
+    }
+  
+    .budget {
+  
+      list-style-type: none;
+      padding: 3%;
+      overflow: hidden;
+      display: flex;
+      flex-flow: column;
+      text-align: center;
+      /* grid-gap: 4%; */
+    }
+  
+    dl {
+      width: 100%;
+      padding: 0%;
+      margin: 0%;
+    }
+  
+    .budgetDetails {
+        width: 75%;
+    }
+    .button-group {
+      display: flex;
+      flex-flow: row;
+      max-width: 75%;  
+    }
+  
+    .button-group>button {
+      width: 50%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 0%;
+      border-radius: 2px;
+    }
+  
+  }
+  
+  
