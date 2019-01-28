@@ -14,10 +14,10 @@
         <dd>{{expensesPerUser[i]-totalSpend[i]>0?"Due balance":"Credit balance"}}:{{expensesPerUser[i]-totalSpend[i] | positive | number: '.2'}}</dd>
       </dl>
     </section>
-    <!-- <button class="calculateBtn" (click)="manageBudget()">Calculate Budget</button>
+    <button class="calculateBtn" (click)="manageBudget()">Calculate Budget</button>
     <dl>
       <dd *ngFor="let item of statement" >{{item}}</dd>
-    </dl> -->
+    </dl>
   </div>
 
 

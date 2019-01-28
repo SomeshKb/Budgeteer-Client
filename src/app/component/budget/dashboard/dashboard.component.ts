@@ -5,6 +5,7 @@ import { BudgetDetails } from '../../../models/budget';
 import { UserProfile } from '../../../models/user';
 import { resolve } from 'dns';
 import { reject } from 'q';
+import { formatNumber } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -64,7 +65,7 @@ export class DashboardComponent implements OnInit {
         });
       });
     });
-    }
+  }
 
   getUniqueContributors(budget: BudgetDetails[]) {
     const contributors: any[] = [];
@@ -121,24 +122,26 @@ export class DashboardComponent implements OnInit {
       dueBalance[index] = this.totalSpend[index] - this.expensesPerUser[index];
     });
 
-    // dueBalance.forEach((value, i) => {
-    //   if (value === 0) {
-    //   } else if (value < 0) {
-    //     dueBalance.forEach((expense, j) => {
-    //       if (expense > 0) {
-    //         if (dueBalance[j] < dueBalance[i]) {
-    //           dueBalance[i] = dueBalance[j] + dueBalance[i];
-    //           this.statement.push(this.contributorDetails[i].firstName + ' will give ' + dueBalance[j] + ' to ' + this.contributorDetails[j].firstName);
-    //           dueBalance[j] = 0;
-    //         } else {
-    //           dueBalance[j] = dueBalance[j] + dueBalance[i];
-    //           this.statement.push(this.contributorDetails[i].firstName + ' will give ' + dueBalance[i] + ' to ' + this.contributorDetails[j].firstName);
-    //           dueBalance[i] = 0;
-    //         }
-    //       }
-    //     });
-    //   }
-    // });
+    dueBalance.forEach((value, i) => {
+      if (value < 0) {
+        dueBalance.forEach((expense, j) => {
+          if (expense > 0) {
+            if (dueBalance[j] < Math.abs(dueBalance[i])) {
+              dueBalance[i] = dueBalance[j] + dueBalance[i];
+
+              this.statement.push(this.contributorDetails[i].firstName + ' will give '
+                + Math.abs(dueBalance[j]).toFixed(2) + ' to ' + this.contributorDetails[j].firstName);
+              dueBalance[j] = 0;
+            } else {
+              dueBalance[j] = dueBalance[j] + dueBalance[i];
+              this.statement.push(this.contributorDetails[i].firstName + ' will give '
+                + Math.abs(dueBalance[i]).toFixed(2) + ' to ' + this.contributorDetails[j].firstName);
+              dueBalance[i] = 0;
+            }
+          }
+        });
+      }
+    });
     return dueBalance;
   }
 

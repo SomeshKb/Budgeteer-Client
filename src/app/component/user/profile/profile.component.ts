@@ -48,9 +48,10 @@ export class ProfileComponent implements OnInit {
     return;
   }
   budgetSettled(id) {
-    // this.budgetService.hasSettled(id, true).subscribe(res => {
-    //   // this.getUserBudget(this.userDetails);
-    // });
+    this.budgetService.hasSettled(id, true).subscribe(res => {
+      this.publishedBudget = [];
+      this.getUserBudget(this.userDetails);
+    });
     console.log(this.publishedBudget);
     console.log(this.contributors);
   }
