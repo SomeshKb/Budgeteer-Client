@@ -23,6 +23,7 @@ import { ProfileComponent } from './component/user/profile/profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DashboardComponent } from './component/budget/dashboard/dashboard.component';
+import { PositivePipe } from './component/budget/pipe/positive.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DashboardComponent } from './component/budget/dashboard/dashboard.compo
     LoaderComponent,
     AlertComponent,
     ProfileComponent,
-    DashboardComponent
+    DashboardComponent,
+    PositivePipe
   ],
   imports: [
     BrowserModule,

@@ -57,10 +57,13 @@ export class AddBudgetComponent implements OnInit {
     } else {
       this.createForm.controls['contributors'].setValue(this.selectedContributor);
       this.createForm.controls['buyer'].setValue(this.userID);
+
+      console.log(this.createForm.value);
       this.budgetService.postBudget(this.createForm.value).subscribe(res => {
         this.submitted = false;
         this.alertService.success('Budget Details Added');
         this.createForm.reset();
+        this.selectedContributor = [];
       });
     }
   }
@@ -75,6 +78,7 @@ export class AddBudgetComponent implements OnInit {
         return x !== event.target.value;
       });
     }
+    console.log(this.selectedContributor);
   }
 
 }

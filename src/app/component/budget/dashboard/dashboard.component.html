@@ -4,23 +4,29 @@
     <button [disabled]=isSettled (click)="toggleBudget()">Old Budget</button>
   </div>
 
-  <div class="budget" *ngIf="settledBudget">
-    <section class="budgetDetails" *ngFor="let user of contributorDetails; let i=index">
+  <div class="budget" *ngIf="settledBudget&&!isSettled">
+    <section class="budgetDetails" *ngFor="let user of contributorDetails; let
+      i=index">
       <dl *ngIf="user">
-      <dd>UserName:{{user.firstName |uppercase }}<dd>
-      <dd>Share:{{expensesPerUser[i]}}<dd>
-      <dd>Total Spend:{{totalSpend[i]}}<dd>
-        <dd>{{expensesPerUser[i]-totalSpend[i]>0?"Credit balance":"Due balance"}}:{{expensesPerUser[i]-totalSpend[i]}}</dd>
+        <dd>UserName:{{user.firstName |uppercase }}<dd>
+        <dd>Share:{{expensesPerUser[i] | number: '.2'}}<dd>
+        <dd>Total Spend:{{totalSpend[i] | number: '.2'}}<dd>
+        <dd>{{expensesPerUser[i]-totalSpend[i]>0?"Due balance":"Credit balance"}}:{{expensesPerUser[i]-totalSpend[i] | positive | number: '.2'}}</dd>
       </dl>
-      </section>
+    </section>
+    <!-- <button class="calculateBtn" (click)="manageBudget()">Calculate Budget</button>
+    <dl>
+      <dd *ngFor="let item of statement" >{{item}}</dd>
+    </dl> -->
   </div>
-  
-  <div class="budget" *ngIf="!settledBudget">
-    <section class="budgetDetails" *ngFor="let user of contributorDetails; let i=index">
-      <dd>UserName:{{user.firstName |uppercase }}<dd>
-      <dd>Share:{{expensesPerUser[i]}}<dd>
-          <dd>Total Spend:{{totalSpend[i]}}<dd>
 
+
+  <div class="budget" *ngIf="!settledBudget">
+    <section class="budgetDetails" *ngFor="let user of
+      contributorDetails; let i=index">
+      <dd>UserName:{{user.firstName |uppercase }}<dd>
+      <dd>Share:{{expensesPerUser[i] | number: '.2'}}<dd>
+      <dd>Total Spend:{{totalSpend[i] | number: '.2'}}<dd>
     </section>
   </div>
 </section>
