@@ -3,9 +3,6 @@ import { BudgetService } from '../../../service/budget/budget.service';
 import { AuthenticationService } from '../../../service/user/authentication.service';
 import { BudgetDetails } from '../../../models/budget';
 import { UserProfile } from '../../../models/user';
-import { resolve } from 'dns';
-import { reject } from 'q';
-import { formatNumber } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
