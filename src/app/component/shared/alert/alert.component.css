@@ -1,6 +1,6 @@
 div {
   position: absolute;
-  width: 20%;
+  width: 40%;
   height: 45px;
   text-align: center;
   align-items: center;
@@ -10,7 +10,7 @@ div {
   font-size: 90%;
   z-index: 500000;
   color: white;
-  top: 10%; 
+  top: 12%; 
 }
 
 p {
