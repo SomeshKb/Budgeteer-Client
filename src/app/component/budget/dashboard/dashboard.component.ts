@@ -114,6 +114,7 @@ export class DashboardComponent implements OnInit {
 
   manageBudget(): any[] {
     const dueBalance: any[] = [];
+    this.statement = [];
     dueBalance.length = this.expensesPerUser.length;
     this.expensesPerUser.forEach((value, index) => {
       dueBalance[index] = this.totalSpend[index] - this.expensesPerUser[index];

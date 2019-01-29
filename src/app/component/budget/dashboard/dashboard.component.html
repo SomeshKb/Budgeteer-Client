@@ -4,7 +4,7 @@
     <button [disabled]=isSettled (click)="toggleBudget()">Old Budget</button>
   </div>
 
-  <div class="budget" *ngIf="settledBudget&&!isSettled">
+  <div class="budget" *ngIf="notSettledBudget.length>0">
     <section class="budgetDetails" *ngFor="let user of contributorDetails; let
       i=index">
       <dl *ngIf="user">
@@ -21,7 +21,7 @@
   </div>
 
 
-  <div class="budget" *ngIf="!settledBudget">
+  <div class="budget" *ngIf="settledBudget.length > 0">
     <section class="budgetDetails" *ngFor="let user of
       contributorDetails; let i=index">
       <dd>UserName:{{user.firstName |uppercase }}<dd>
@@ -29,4 +29,5 @@
       <dd>Total Spend:{{totalSpend[i] | number: '.2'}}<dd>
     </section>
   </div>
+
 </section>

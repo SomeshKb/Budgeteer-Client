@@ -6,8 +6,8 @@
 
 export const environment = {
   production: false,
-  // baseUrl: 'https://budgeteer-sever.herokuapp.com/api'
-   baseUrl: 'http://localhost:4000/api'
+  baseUrl: 'https://budgeteer-sever.herokuapp.com/api'
+  //  baseUrl: 'http://localhost:4000/api'
 };
 
 /*

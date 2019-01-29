@@ -7,12 +7,13 @@
   <button [disabled]=isOpenBudget (click)="toggleBudget()">Current Budget</button>
   <button [disabled]=!isOpenBudget (click)="toggleBudget()">Past Budget</button>
 </div>
-
+<section class="itemForm" *ngIf="publishedBudget.length===0">
+    <h4>No Item to Display</h4>
+  </section>
 <section *ngIf="publishedBudget[0]&&!isOpenBudget" class="itemForm">
   <h4>Past Items Bought by you</h4>
   <section class="budget" *ngFor="let item of publishedBudget;let i=index">
       <section class="budgetDetails" *ngIf="contributors[i]&&item.hasSettled"  >
-
         <dd id="name">{{item.name}}</dd>
         <dd>{{item.description| titlecase}}</dd>
         <dd>Date: {{item.createdDate|date}}</dd>
@@ -45,4 +46,5 @@
         <button [disabled]="item.hasSettled" (click)="budgetSettled(item.id)">Settle It</button>
       </section>
     </section>
+
 </section>
